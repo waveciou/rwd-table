@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@import "./utils/_utils.scss";
+
+.swipeTable {
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    white-space: nowrap;
+}
+
+.swipeTable__outerwrap {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.swipeTable__innerwrap {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.swipeTable__notice {
+    padding-bottom: 10px;
+    line-height: 1.6em;
+
+    @include min-width(768px) {
+        display: none;
+    }
+    
+    &::before {
+        content: '';
+        width: 1.6em;
+        height: 1.6em;
+        margin-right: 3px;
+        display: inline-block;
+        vertical-align: top;
+        background: url('../../images/swipe.svg') no-repeat center/80%;
+    }
+}
+

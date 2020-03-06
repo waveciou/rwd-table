@@ -1,0 +1,105 @@
+@charset "UTF-8";
+@import "./utils/_utils.scss";
+
+@import "./_reset.scss";
+
+// * ==========================================================================
+// * Basic
+// * ==========================================================================
+
+body {
+    line-height: 1.6em;
+    letter-spacing: 0.5px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    font-size: 1rem;
+    font-family: '微軟正黑體', 'Microsoft JhengHei', sans-serif, Arial, Helvetica;
+}
+
+.wrap {
+    width: 100%;
+    max-width: calc(100% - 20px);
+    margin: auto;
+
+    @include min-width(960px + 40px) {
+        max-width: 960px;
+    }
+}
+
+h2 {
+    line-height: 1.6em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+// * ==========================================================================
+// * 基本的表格樣式設定
+// * ==========================================================================
+
+table {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    tr {
+        background-color: $color-gray-1;
+
+        th, td {
+            padding: 10px 15px;
+            line-height: 1.8em;
+            vertical-align: middle;
+            border: 1px $color-white solid;
+            text-align: center;
+        }
+
+        th {
+            background-color: $color-gray-2;
+            color: $color-black;
+            vertical-align: top;
+        }
+    }
+}
+
+// * ==========================================================================
+// * Footable
+// * ==========================================================================
+
+.footable {
+    .footable-row-detail-name {
+        padding-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .footable-row-detail-value {
+        padding-bottom: 10px;
+    }
+}
+
+@import "./plugins/_footable.scss";
+
+// * ==========================================================================
+// * PocketTable
+// * ==========================================================================
+
+@import "./_pocketTable.scss";
+
+// * ==========================================================================
+// * ListTable
+// * ==========================================================================
+
+@import "./_listTable.scss";
+
+// * ==========================================================================
+// * SwipeTable
+// * ==========================================================================
+
+@import "./_swipeTable.scss";
+
+// * ==========================================================================
+// * PaginationTable
+// * ==========================================================================
+
+@import "./_paginationTable.scss";

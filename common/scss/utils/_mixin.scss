@@ -1,0 +1,81 @@
+@import "./_variables.scss";
+
+// * RWD Max Breakpoints
+@mixin max-width($breakpoints) {
+    @media screen and (max-width: $breakpoints) {
+        @content;
+    }
+}
+
+// * RWD Min Breakpoints
+@mixin min-width($breakpoints) {
+    @media screen and (min-width: $breakpoints) {
+        @content;
+    }
+}
+
+// * RWD Max Height Breakpoints
+@mixin max-height($breakpoints) {
+    @media screen and (max-height: $breakpoints) {
+        @content;
+    }
+}
+
+// * RWD Min Height Breakpoints
+@mixin min-height($breakpoints) {
+    @media screen and (min-height: $breakpoints) {
+        @content;
+    }
+}
+
+// * 列印的樣式
+@mixin print {
+    @media print {
+        @content;
+    }
+}
+
+// * 排除內容區塊樣式
+@mixin exclude-content {
+    @at-root .content & {
+        @content;
+    }
+}
+
+// * Clear Fix
+@mixin clearfix {
+    &::after {
+        content: '.';
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+// * 處理IE10和IE11的CSS Hack
+@mixin hack-ie {
+    @media screen and (-ms-high-contrast: active),(-ms-high-contrast: none){
+        @content;
+    }
+}
+
+// * 隱藏文字
+@mixin hidetext {
+    font-size: 0rem;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+// * Font Awesome
+@mixin fontawesome {
+    font-weight: 900;
+    font-family: 'Font Awesome 5 Free';
+}
+
+// * noscript 樣式
+@mixin noscript {
+    @at-root .no-js & {
+        @content
+    }
+}

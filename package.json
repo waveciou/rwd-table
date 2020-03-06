@@ -1,0 +1,17 @@
+{
+  "name": "rwd-table",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waveciou/rwd-table.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/waveciou/rwd-table/issues"
+  },
+  "homepage": "https://github.com/waveciou/rwd-table#readme"
+}
