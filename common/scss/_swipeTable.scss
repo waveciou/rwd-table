@@ -21,11 +21,13 @@
 }
 
 .swipeTable__notice {
-    padding-bottom: 10px;
+    display: none;
     line-height: 1.6em;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
 
-    @include min-width(768px) {
-        display: none;
+    &.is-open {
+        display: block;
     }
     
     &::before {

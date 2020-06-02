@@ -164,8 +164,26 @@ $(function () {
     // * SwipeTable 的設定
     // * ==========================================================================
 
+    const $swipeTable = $('.swipeTable');
+
+    function ctrlSwipeTableNotice(width) {
+        if ($swipeTable && width <= 1024) {
+            $swipeTable.each(function() {
+                let $table = $(this);
+                let $innerWrap = $table.parent('.swipeTable__innerwrap');
+                let $notice = $innerWrap.siblings('.swipeTable__notice');
+
+                if ($table.width() > $innerWrap.width()) {
+                    $notice.addClass('is-open');
+                } else {
+                    $notice.removeClass('is-open');
+                }
+            });
+        }
+    }
+
     function setSwipeTable() {
-        $('.swipeTable').each(function() {
+        $swipeTable.each(function() {
             let $table = $(this);
             let notice = $table.data('notice');
             $table.wrap(`<div class="swipeTable__outerwrap"><div class="swipeTable__innerwrap"></div></div>`);
@@ -284,6 +302,7 @@ $(function () {
     $window.on('resize', function () {
         screenWidth = $window.outerWidth();
         ctrlPocketTableColumn(screenWidth, pocketTable.breakpoint);
+        ctrlSwipeTableNotice(screenWidth);
     }).trigger('resize');
 
 });
