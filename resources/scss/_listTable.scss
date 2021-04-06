@@ -1,0 +1,56 @@
+@charset "UTF-8";
+@import "./utils/_utils.scss";
+
+.listTable {
+  width: 100%;
+
+  th,
+  td {
+    display: block;
+
+    @include min-width(768px) {
+      display: table-cell;
+      vertical-align: top;
+    }
+  }
+
+  td {
+    &::before {
+      content: attr(data-headline) '：';
+
+      @include min-width(768px) {
+        display: none;
+      }
+    }
+  }
+
+  tr {
+    display: block;
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    @include min-width(768px) {
+      display: table-row;
+      margin-bottom: 0px;
+    }
+  }
+
+  thead {
+    display: none;
+
+    @include min-width(768px) {
+      display: table-header-group;
+    }
+  }
+
+  tbody {
+    display: block;
+
+    @include min-width(768px) {
+      display: table-row-group;
+    }
+  }
+}
